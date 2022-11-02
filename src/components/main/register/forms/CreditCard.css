@@ -1,0 +1,12 @@
+.input-card__name,
+.input-card__number {
+  grid-column: 1/5;
+}
+
+.input-card__date {
+  grid-column: 1/4;
+}
+
+.input-card__code {
+  grid-column: 4/7;
+}

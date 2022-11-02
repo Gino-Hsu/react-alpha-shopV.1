@@ -1,0 +1,10 @@
+.input-group {
+  width: 100%;
+}
+
+.input-label {
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--form-font-color);
+}

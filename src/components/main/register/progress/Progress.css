@@ -1,0 +1,15 @@
+.progress-container {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-bar {
+  display: flex;
+  flex-grow: 1;
+  max-width: 60px;
+  height: 1px;
+  margin: 0px 8px;
+  border: 2px solid #AFB1BD;
+}

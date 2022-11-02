@@ -1,0 +1,23 @@
+.progress-group {
+  display: flex;
+  align-items: center;
+}
+
+.progress-icon {
+  margin-right: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #AFB1BD;
+  background-color: var(--circle-bgColor);
+  border: 1px solid #AFB1BD;
+  border-radius: 50%;
+}
+
+.progress-label {
+  font-size: 1rem;
+  color: #AFB1BD;
+}

@@ -1,0 +1,21 @@
+.nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--font-color);
+}
+
+.nav-icon {
+  width: 24px;
+}
+
+.nav-icon img {
+  width: 100%;
+}
+
+.icon-logo {
+  width: 170px;
+}
+
+.icon-logo img {
+  width: 100%;
+}
