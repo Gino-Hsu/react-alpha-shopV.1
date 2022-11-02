@@ -2,9 +2,9 @@ import React from 'react'
 
 import './Input.css'
 
-export function Input({ inputClass, label, children }) {
+export function Input({ id, label, children }) {
   return (
-    <div className={`input-group input-${inputClass}`}>
+    <div className={`input-group input-${id}`}>
       <div className='input-label'>{label}</div>
       {children}
     </div>

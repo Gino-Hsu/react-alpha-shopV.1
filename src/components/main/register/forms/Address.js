@@ -9,8 +9,8 @@ export default function Address() {
   return (
     <Form type='address' title='寄送地址'>
       <div className='input-container'>
-        <Input inputClass='appellation' label='稱謂'>
-          <div class='select-container'>
+        <Input id='appellation' label='稱謂'>
+          <div className='select-container'>
             <select>
               <option value='mr' selected>
                 先生
@@ -20,23 +20,23 @@ export default function Address() {
             </select>
           </div>
         </Input>
-        <Input inputClass='name' label='姓名'>
+        <Input id='name' label='姓名'>
           <input type='text' placeholder='請輸入姓名' />
         </Input>
       </div>
 
       <div className='input-container'>
-        <Input inputClass='phone' label='電話'>
+        <Input id='phone' label='電話'>
           <input type='tel' placeholder='請輸入行動電話' />
         </Input>
-        <Input inputClass='email' label='Email'>
+        <Input id='email' label='Email'>
           <input type='email' placeholder='請輸入電子郵件' />
         </Input>
       </div>
 
       <div className='input-container'>
-        <Input inputClass='city' label='縣市'>
-          <div class='select-container'>
+        <Input id='city' label='縣市'>
+          <div className='select-container'>
             <select required>
               <option value=''>請選擇縣市</option>
               <option value='KLU'>基隆市</option>
@@ -71,7 +71,7 @@ export default function Address() {
             </select>
           </div>
         </Input>
-        <Input inputClass='address' label='地址'>
+        <Input id='address' label='地址'>
           <input type='text' placeholder='請輸入地址' />
         </Input>
       </div>
