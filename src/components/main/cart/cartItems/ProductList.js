@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './ProductList.css'
+
 export default function ProductList({ dataPrice, imgSrc, productName }) {
   return (
     <div
@@ -7,7 +9,9 @@ export default function ProductList({ dataPrice, imgSrc, productName }) {
       data-count='0'
       data-price={dataPrice}
     >
-      <img className='img-container' src={imgSrc} alt={productName} />
+      <div className='img-container'>
+        <img src={imgSrc} alt={productName} />
+      </div>
       <div className='product-info'>
         <div className='product-name'>{productName}</div>
         <div className='product-control-container'>
@@ -25,9 +29,5 @@ export default function ProductList({ dataPrice, imgSrc, productName }) {
 }
 
 function Button({ intext }) {
-  return (
-    <button className='btn dtn-minus d-flex justify-content-center align-items-center'>
-      {intext}
-    </button>
-  )
+  return <div className='btn'>{intext}</div>
 }
