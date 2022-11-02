@@ -1,6 +1,7 @@
 import React from 'react'
 import Progress from './progress/Progress'
 import Forms from './forms/Forms'
+import ProgressControl from './progressControl/ProgressControl'
 
 import './Register.css'
 
@@ -11,6 +12,7 @@ export default function Register() {
       <h2 className='register-title'>結帳</h2>
       <Progress />
       <Forms />
+      <ProgressControl />
     </section>
   )
 }

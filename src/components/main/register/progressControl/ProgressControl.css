@@ -1,0 +1,27 @@
+.progress-control-container {
+  margin-top: 3rem;
+  border-top: 1px solid var(--divider-color);
+}
+
+.progress-control_button-group {
+  padding-top: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-back {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--font-color);
+}
+
+.btn-prinary {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+  background-color: #f67599;
+  border-radius: 8px;
+  padding: 14.5px 47.5px;
+}
