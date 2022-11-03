@@ -1,33 +1,33 @@
 import React from 'react'
 
-import './Input.css'
+import styles from './Input.module.css'
 
 export function Input({ id, label, children }) {
   return (
-    <div className={`input-group input-${id}`}>
-      <div className='input-label'>{label}</div>
+    <div className={`${styles.input__group} input__${id}`}>
+      <div className={styles.input__label}>{label}</div>
       {children}
     </div>
   )
 }
 
-export function InputRadio({ radioId, price, name, period }) {
+export function InputRadio({ radioId, price, name, priceIntext, period }) {
   return (
-    <label className='radio-group' data-price={price}>
+    <label className={styles.radio__group} data-price={price}>
       <input
-        id={`shipping-standard${radioId}`}
+        id={`shipping__standard${radioId}`}
         type='radio'
         name='shipping'
         checked
       />
-      <div className='radio-info'>
-        <div className='col col-12'>
-          <div className='text'>{name}</div>
-          <div className='price'></div>
+      <div className={styles.radio__info}>
+        <div className={styles.radio__info__container}>
+          <div className={styles.text}>{name}</div>
+          <div className={styles.price}>{priceIntext}</div>
         </div>
-        <div className='period'>{period}</div>
+        <div className={styles.period}>{period}</div>
       </div>
-      <div className='radio-box-border'></div>
+      <div className={`${styles.radio__box__border} radio__box__border`}></div>
     </label>
   )
 }

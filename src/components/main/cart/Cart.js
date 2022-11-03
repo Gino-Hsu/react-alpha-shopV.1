@@ -6,7 +6,7 @@ import PriceList from './cartItems/PriceList'
 import product_01 from '../../../images/product_01@2x.png'
 import product_02 from '../../../images/product_02@2x.png'
 
-import './Cart.css'
+import styles from './Cart.module.css'
 
 const PRODUCTS = [
   {
@@ -25,9 +25,9 @@ const PRODUCTS = [
 
 export default function Cart() {
   return (
-    <section className='cart-container'>
-      <h3 className='cart-title'>購物籃</h3>
-      <section className='product-list col col-12' data-total-price='0'>
+    <section className={styles.cart__container}>
+      <h3 className={styles.cart__title}>購物籃</h3>
+      <section className='product__list' data-total-price='0'>
         {PRODUCTS.map(product => {
           return (
             <ProductList

@@ -1,9 +1,9 @@
-.form-title {
+.form__title {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--font-color);
 }
 
-.form-body {
+.form__body {
   height: 228px;
 }

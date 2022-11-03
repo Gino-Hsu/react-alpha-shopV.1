@@ -1,19 +1,22 @@
 import React from 'react'
 import ProgressBtn from './ProgressBtn'
 
-import './ProgressControl.css'
+import style from './ProgressControl.module.css'
 
 export default function ProgressControl() {
   return (
-    <section className='progress-control-container'>
-      <section className='progress-control_button-group' data-phase='address'>
+    <section className={style.progress__control__container}>
+      <section
+        className={style.progress__control__button__group}
+        data-phase='address'
+      >
         <ProgressBtn
-          type='progress-control_btn btn-back'
+          type='progress__control__btn btn__back'
           intext='&larr; 上一步'
           disabled='disabled'
         />
         <ProgressBtn
-          type='progress-control_btn btn-prinary'
+          type='progress__control__btn btn__prinary'
           intext='下一步 &rarr;'
           disabled=''
         />

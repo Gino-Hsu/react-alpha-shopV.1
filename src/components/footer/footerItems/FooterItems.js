@@ -1,8 +1,10 @@
 import React from 'react'
 
+import styles from '../Footer.module.css'
+
 export function Logo({ imgSrc }) {
   return (
-    <div className='footer-logo-container'>
+    <div className={styles.footer__logo__container}>
       <img src={imgSrc} alt='Logo' />
     </div>
   )
@@ -10,16 +12,16 @@ export function Logo({ imgSrc }) {
 
 export function FooterSection({ title, children }) {
   return (
-    <section className='footer-section'>
-      <h2 className='section-title'>{title}</h2>
-      <div className='section-content'>{children}</div>
+    <section className='footer__section'>
+      <h2 className={styles.section__title}>{title}</h2>
+      <div className={styles.section__content}>{children}</div>
     </section>
   )
 }
 
 export function PageLink({ intext }) {
   return (
-    <div className='page-link cursor-point' href='#'>
+    <div className={`${styles.page__link} cursor-point`} href='#'>
       {intext}
     </div>
   )

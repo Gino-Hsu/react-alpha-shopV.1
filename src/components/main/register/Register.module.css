@@ -1,8 +1,8 @@
-.register-container {
+.register__container {
   grid-column: 1/2;
 }
 
-.register-title {
+.register__title {
   font-weight: 700;
   font-size: 2rem;
   color: var(--font-color)

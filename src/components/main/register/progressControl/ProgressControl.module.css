@@ -1,9 +1,10 @@
-.progress-control-container {
+.progress__control__container {
   margin-top: 3rem;
   border-top: 1px solid var(--divider-color);
+  cursor: pointer;
 }
 
-.progress-control_button-group {
+.progress__control__button__group {
   padding-top: 1.5rem;
   width: 100%;
   display: flex;
@@ -11,13 +12,17 @@
   align-items: center;
 }
 
-.btn-back {
+:global(.btn__back) {
   font-size: 14px;
   font-weight: 400;
   color: var(--font-color);
 }
 
-.btn-prinary {
+:global(.btn__back[disabled]) {
+  visibility: hidden;
+}
+
+:global(.btn__prinary) {
   font-size: 14px;
   font-weight: 400;
   color: #ffffff;

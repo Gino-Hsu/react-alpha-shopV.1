@@ -7,7 +7,7 @@ import facebook from '../../images/facebook@2x.png'
 import instagram from '../../images/instagram@2x.png'
 import whatsapp from '../../images/whatsapp@2x.png'
 
-import './Footer.css'
+import styles from './Footer.module.css'
 
 const LINKDATAS = {
   section_01: ['運送說明', '退換貨相關', '付款資訊', 'FAQ'],
@@ -17,8 +17,8 @@ const LINKDATAS = {
 
 export default function Footer() {
   return (
-    <footer className='site-footer'>
-      <div className='footer-container container'>
+    <footer className={styles.site__footer}>
+      <div className={`${styles.footer__container} container`}>
         <Logo imgSrc={logo} />
         <FooterSection title='客戶服務'>
           {LINKDATAS.section_01.map((text, index) => {
@@ -36,15 +36,15 @@ export default function Footer() {
           })}
         </FooterSection>
         <FooterSection title='追蹤 ALPHA Shop'>
-          <div className='tel-info'>+886 02123-45678</div>
-          <div className='social-icon-group'>
-            <div className='social-icon cursor-point'>
+          <div className={styles.tel__info}>+886 02123-45678</div>
+          <div className={styles.social__icon__group}>
+            <div className={`${styles.social__icon} cursorPoint`}>
               <img src={facebook} alt='facebook' />
             </div>
-            <div className='social-icon cursor-point'>
+            <div className={`${styles.social__icon} cursorPoint`}>
               <img src={instagram} alt='instagram' />
             </div>
-            <div className='social-icon cursor-point'>
+            <div className={`${styles.social__icon} cursorPoint`}>
               <img src={whatsapp} alt='whatsapp' />
             </div>
           </div>

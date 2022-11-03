@@ -1,6 +1,4 @@
-.main-container {
-  width: 100%;
-  border: 2px solid red;
+.main__container {
   padding-top: 80px;
   display: grid;
   grid-template-columns: 6fr 1.5fr 5fr;

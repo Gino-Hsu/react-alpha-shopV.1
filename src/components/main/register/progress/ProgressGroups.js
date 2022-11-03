@@ -1,14 +1,14 @@
 import React from 'react'
 
-import './ProgressGroups.css'
+import styles from './ProgressGroups.module.css'
 
-export default function ProgressGroups({ svgHerf, step, label }) {
+export default function ProgressGroups({ step, label }) {
   return (
-    <span className='progress-group'>
-      <div className='progress-icon'>
+    <span className={styles.progress__group}>
+      <div className={styles.progress__icon}>
         <span className='text'>{step}</span>
       </div>
-      <span className='progress-label'>{label}</span>
+      <span className={styles.progress__label}>{label}</span>
     </span>
   )
 }

@@ -3,14 +3,12 @@ import React from 'react'
 import Form from './commonComponents/Form'
 import { Input } from './commonComponents/Input'
 
-import './Address.css'
-
 export default function Address() {
   return (
     <Form type='address' title='寄送地址'>
-      <div className='input-container'>
+      <div className='input__container'>
         <Input id='appellation' label='稱謂'>
-          <div className='select-container'>
+          <div className='select__container'>
             <select>
               <option value='mr' selected>
                 先生
@@ -25,7 +23,7 @@ export default function Address() {
         </Input>
       </div>
 
-      <div className='input-container'>
+      <div className='input__container'>
         <Input id='phone' label='電話'>
           <input type='tel' placeholder='請輸入行動電話' />
         </Input>
@@ -34,9 +32,9 @@ export default function Address() {
         </Input>
       </div>
 
-      <div className='input-container'>
+      <div className='input__container'>
         <Input id='city' label='縣市'>
-          <div className='select-container'>
+          <div className='select__container'>
             <select required>
               <option value=''>請選擇縣市</option>
               <option value='KLU'>基隆市</option>

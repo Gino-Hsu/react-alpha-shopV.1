@@ -5,11 +5,11 @@ import Address from './Address'
 // import Ship from './Ship'
 // import CreditCard from './CreditCard'
 
-import './Forms.css'
+import styles from './Forms.module.css'
 
 export default function Forms() {
   return (
-    <section className='form-container'>
+    <section className={styles.form__container}>
       <Address />
       {/* Ship & CreditCard by state */}
       {/* <Ship /> */}

@@ -1,11 +1,11 @@
 import React from 'react'
 import Menu from './menu/Menu'
 
-import './Header.css'
+import styles from './Header.module.css'
 
 export default function Header() {
   return (
-    <header className='site-header'>
+    <header className={styles.site__header}>
       <div className='container'>
         <Menu />
       </div>

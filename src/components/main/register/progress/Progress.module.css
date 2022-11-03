@@ -1,11 +1,11 @@
-.progress-container {
+.progress__container {
   margin: 3rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.progress-bar {
+.progress__bar {
   display: flex;
   flex-grow: 1;
   max-width: 60px;
