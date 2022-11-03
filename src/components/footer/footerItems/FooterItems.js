@@ -19,7 +19,7 @@ export function FooterSection({ title, children }) {
 
 export function PageLink({ intext }) {
   return (
-    <div className='page-link' href='#'>
+    <div className='page-link cursor-point' href='#'>
       {intext}
     </div>
   )

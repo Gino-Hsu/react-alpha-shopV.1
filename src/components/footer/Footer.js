@@ -7,6 +7,8 @@ import facebook from '../../images/facebook@2x.png'
 import instagram from '../../images/instagram@2x.png'
 import whatsapp from '../../images/whatsapp@2x.png'
 
+import './Footer.css'
+
 const LINKDATAS = {
   section_01: ['運送說明', '退換貨相關', '付款資訊', 'FAQ'],
   section_02: ['品牌故事', '媒體聯繫', 'Press kit'],

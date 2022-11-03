@@ -1,0 +1,54 @@
+.site-footer {
+  margin-top: 120px;
+  padding: 4rem 0;
+  width: 100%;
+  background-color: var(--footer-bgColor);
+
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-logo-container {
+  width: 170px;
+  margin: auto 0;
+}
+
+.footer-logo-container img {
+  width: 100%;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--font-color);
+}
+
+.page-link,
+.tel-info {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--footer-font-color);
+}
+
+.section-content {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.social-icon-group {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icon {
+  height: 24px;
+}
+
+.social-icon img {
+  height: 100%;
+}
