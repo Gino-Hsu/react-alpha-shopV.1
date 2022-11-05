@@ -16,3 +16,9 @@
 .icon__logo img {
   width: 100%;
 }
+
+@media screen and (max-width: 730px) {
+  .icon__logo {
+    width: 135px;
+  }
+}

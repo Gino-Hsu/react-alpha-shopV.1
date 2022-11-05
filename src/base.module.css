@@ -25,7 +25,7 @@
   --menu-border-color: rgba(42, 42, 42, 0.1);
 }
 
-:global([data-theme="dark"]) {
+:global([data-theme='dark']) {
   --main-background-color: #121212;
   --font-color: #ffffff;
   --circle-bgColor: #121212;
@@ -37,7 +37,7 @@
   --form-radio-title-color: #ffffff;
   --form-radio-font-color: rgba(255, 255, 255, 0.4);
   --form-radioInput-border-color: #333333;
-  --form-radioInput-background-color: #FFFFFF;
+  --form-radioInput-background-color: #ffffff;
   --form-radioInput-uncheck-width: 12px;
   --form--radioInput-checked-width: 6px;
   --divider-color: rgba(255, 255, 255, 0.2);
@@ -64,4 +64,10 @@
 
 :global(.cursor-point) {
   cursor: pointer;
+}
+
+@media screen and (max-width: 730px) {
+  :global(.container) {
+    width: 90%;
+  }
 }
