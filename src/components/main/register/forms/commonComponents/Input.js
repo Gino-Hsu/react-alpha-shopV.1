@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from './Input.module.css'
 
-export function Input({ id, label, children }) {
+export function InputBox({ id, label, children }) {
   return (
     <div className={`${styles.input__group} input__${id}`}>
       <div className={styles.input__label}>{label}</div>

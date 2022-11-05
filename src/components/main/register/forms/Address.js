@@ -1,41 +1,58 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Form from './commonComponents/Form'
-import { Input } from './commonComponents/Input'
+import { InputBox } from './commonComponents/Input'
 
 export default function Address() {
+  const [selectValue, setSelectValue] = useState({ appellation: '', city: '' })
+
+  function apellationSelectedHandler(e) {
+    setSelectValue({ ...selectValue, appellation: e.target.value })
+  }
+
+  function citySelectedHandler(e) {
+    setSelectValue({ ...selectValue, city: e.target.value })
+  }
+
   return (
     <Form type='address' title='寄送地址'>
       <div className='input__container'>
-        <Input id='appellation' label='稱謂'>
+        <InputBox id='appellation' label='稱謂'>
           <div className='select__container'>
-            <select>
-              <option value='mr' selected>
-                先生
-              </option>
+            <select
+              key='appellation'
+              value={selectValue.appellation}
+              onChange={apellationSelectedHandler}
+              required
+            >
+              <option value='mr'>先生</option>
               <option value='ms'>女士</option>
               <option value='mx'>不明</option>
             </select>
           </div>
-        </Input>
-        <Input id='name' label='姓名'>
+        </InputBox>
+        <InputBox id='name' label='姓名'>
           <input type='text' placeholder='請輸入姓名' />
-        </Input>
+        </InputBox>
       </div>
 
       <div className='input__container'>
-        <Input id='phone' label='電話'>
+        <InputBox id='phone' label='電話'>
           <input type='tel' placeholder='請輸入行動電話' />
-        </Input>
-        <Input id='email' label='Email'>
+        </InputBox>
+        <InputBox id='email' label='Email'>
           <input type='email' placeholder='請輸入電子郵件' />
-        </Input>
+        </InputBox>
       </div>
 
       <div className='input__container'>
-        <Input id='city' label='縣市'>
+        <InputBox id='city' label='縣市'>
           <div className='select__container'>
-            <select required>
+            <select
+              value={selectValue.city}
+              onChange={citySelectedHandler}
+              required
+            >
               <option value=''>請選擇縣市</option>
               <option value='KLU'>基隆市</option>
               <option value='TPH'>新北市</option>
@@ -68,10 +85,10 @@ export default function Address() {
               <option value='LNN'>連江縣</option>
             </select>
           </div>
-        </Input>
-        <Input id='address' label='地址'>
+        </InputBox>
+        <InputBox id='address' label='地址'>
           <input type='text' placeholder='請輸入地址' />
-        </Input>
+        </InputBox>
       </div>
     </Form>
   )
