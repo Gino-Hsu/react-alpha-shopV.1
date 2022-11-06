@@ -2,24 +2,22 @@ import React from 'react'
 import ProductList from './cartItems/ProductList'
 import PriceList from './cartItems/PriceList'
 
-// import image
-import product_01 from '../../../images/product_01@2x.png'
-import product_02 from '../../../images/product_02@2x.png'
-
 import styles from './Cart.module.css'
 
 const PRODUCTS = [
   {
-    id: 1,
-    name: '破壞補丁修身牛仔褲',
-    price: 3999,
-    image: product_01,
+    id: '1',
+    name: '貓咪罐罐',
+    img: 'https://picsum.photos/300/300?text=1',
+    price: 100,
+    quantity: 2,
   },
   {
-    id: 2,
-    name: '刷色直筒牛仔褲',
-    price: 1299,
-    image: product_02,
+    id: '2',
+    name: '貓咪干干',
+    img: 'https://picsum.photos/300/300?text=2',
+    price: 200,
+    quantity: 1,
   },
 ]
 
@@ -33,7 +31,7 @@ export default function Cart() {
             <ProductList
               key={product.id}
               dataPrice={product.price}
-              imgSrc={product.image}
+              imgSrc={product.img}
               productName={product.name}
             />
           )
