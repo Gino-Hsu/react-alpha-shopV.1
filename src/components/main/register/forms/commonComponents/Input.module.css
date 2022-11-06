@@ -24,7 +24,7 @@
 }
 
 :global(.input__email) {
-  grid-column: 4/7
+  grid-column: 4/7;
 }
 
 .radio__group {
@@ -91,4 +91,19 @@
   font-size: 12px;
   font-weight: 400;
   color: var(--form-radio-font-color);
+}
+
+@media screen and (max-width: 560px) {
+  :global(.input__appellation) {
+    grid-column: 1/4;
+  }
+  :global(.input__name) {
+    grid-column: 4/7;
+  }
+  :global(.input__phone),
+  :global(.input__email),
+  :global(.input__city),
+  :global(.input__address) {
+    grid-column: 1/7;
+  }
 }

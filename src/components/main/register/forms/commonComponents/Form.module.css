@@ -7,3 +7,9 @@
 .form__body {
   height: 228px;
 }
+
+@media screen and (max-width: 560px) {
+  .form__body {
+    height: 100%;
+  }
+}

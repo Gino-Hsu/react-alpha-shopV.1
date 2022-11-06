@@ -16,7 +16,7 @@ export default function ProgressControl() {
           disabled='disabled'
         />
         <ProgressBtn
-          type='progress__control__btn btn__prinary'
+          type='progress__control__btn btn__prinary btn__fallwidth'
           intext='下一步 &rarr;'
           disabled=''
         />

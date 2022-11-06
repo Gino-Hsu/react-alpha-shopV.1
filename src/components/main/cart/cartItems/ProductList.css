@@ -63,3 +63,21 @@
   font-weight: 700;
   color: var(--font-color);
 }
+
+@media screen and (max-width: 450px) {
+  .product-info {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .product-control-container {
+    top: 50%;
+    left: 100%;
+    transform: translate(-100%, -50%);
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .product-info {
+    flex-direction: column;
+  }
+}

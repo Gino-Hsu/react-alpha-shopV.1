@@ -11,13 +11,29 @@
   justify-content: center;
   align-items: center;
   font-size: 0.75rem;
-  color: #AFB1BD;
+  color: #afb1bd;
   background-color: var(--circle-bgColor);
-  border: 1px solid #AFB1BD;
+  border: 1px solid #afb1bd;
   border-radius: 50%;
 }
 
 .progress__label {
   font-size: 1rem;
-  color: #AFB1BD;
+  color: #afb1bd;
+}
+
+@media screen and (max-width: 560px) {
+  .progress__icon {
+    margin-right: 0;
+  }
+  .progress__label {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .progress__icon {
+    width: 2rem;
+    height: 2rem;
+  }
 }

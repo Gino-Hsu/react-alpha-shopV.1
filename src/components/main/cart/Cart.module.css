@@ -11,3 +11,19 @@
   font-weight: 700;
   color: var(--font-color);
 }
+
+@media screen and (max-width: 560px) {
+  .cart__title {
+    display: none;
+  }
+  .cart__container {
+    padding: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .cart__container {
+    grid-column: 1/4;
+    margin: 2rem 0;
+  }
+}

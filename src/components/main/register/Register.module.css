@@ -5,5 +5,11 @@
 .register__title {
   font-weight: 700;
   font-size: 2rem;
-  color: var(--font-color)
+  color: var(--font-color);
+}
+
+@media screen and (max-width: 730px) {
+  .register__container {
+    grid-column: 1/4;
+  }
 }

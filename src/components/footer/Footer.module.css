@@ -3,7 +3,6 @@
   padding: 4rem 0;
   width: 100%;
   background-color: var(--footer-bgColor);
-
 }
 
 .footer__container {
@@ -51,4 +50,10 @@
 
 .social__icon img {
   height: 100%;
+}
+
+@media screen and (max-width: 730px) {
+  .site__footer {
+    display: none;
+  }
 }

@@ -14,7 +14,7 @@ import styles from './Menu.module.css'
 export default function Menu() {
   return (
     <>
-      <label className={styles.hamburger} for='menu__checkbox'>
+      <label className={styles.hamburger} htmlFor='menu__checkbox'>
         <img
           className={styles.hamburger__img}
           src={hamburger}

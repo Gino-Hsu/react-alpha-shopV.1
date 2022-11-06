@@ -1,6 +1,12 @@
 .main__container {
+  position: relative;
   padding-top: 80px;
   display: grid;
   grid-template-columns: 6fr 1.5fr 5fr;
 }
 
+@media screen and (max-width: 730px) {
+  .main__container {
+    padding-top: 1rem;
+  }
+}
