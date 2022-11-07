@@ -1,7 +1,6 @@
 import React from 'react'
 import Register from './register/Register'
 import Cart from './cart/Cart'
-import Footer from '../footer/Footer'
 
 import style from './Main.module.css'
 
@@ -12,7 +11,6 @@ export default function Main() {
         <Register />
         <Cart />
       </div>
-      <Footer />
     </main>
   )
 }
