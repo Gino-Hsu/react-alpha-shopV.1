@@ -1,12 +1,11 @@
 .input__group {
   width: 100%;
-}
-
-.input__label {
-  margin-bottom: 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--form-font-color);
+  .input__label {
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--form-font-color);
+  }
 }
 
 :global(.input__appellation),
@@ -36,16 +35,47 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-}
 
-.radio__box__border {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border: 1px solid var(--form-radio-border-color);
-  border-radius: 4px;
+  .radio__info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .radio__info__container {
+      width: 100%;
+
+      .text {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--form-radio-title-color);
+      }
+
+      .price {
+        font-size: 12px;
+        font-weight: 400;
+        color: var(--font-color);
+        pointer-events: none;
+        position: absolute;
+        top: 13px;
+        right: 20px;
+      }
+    }
+  }
+
+  .period {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--form-radio-font-color);
+  }
+
+  .radio__box__border {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid var(--form-radio-border-color);
+    border-radius: 4px;
+  }
 }
 
 :global(.input__card__name),
@@ -59,38 +89,6 @@
 
 :global(.input__card__code) {
   grid-column: 4/7;
-}
-
-.radio__info {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.radio__info__container {
-  width: 100%;
-}
-
-.text {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--form-radio-title-color);
-}
-
-.price {
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--font-color);
-  pointer-events: none;
-  position: absolute;
-  top: 13px;
-  right: 20px;
-}
-
-.period {
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--form-radio-font-color);
 }
 
 @media screen and (max-width: 560px) {

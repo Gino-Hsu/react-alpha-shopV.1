@@ -1,7 +1,7 @@
 import React from 'react'
 import Menu from './menu/Menu'
 
-import styles from './Header.module.css'
+import styles from './Header.module.scss'
 
 export default function Header() {
   return (

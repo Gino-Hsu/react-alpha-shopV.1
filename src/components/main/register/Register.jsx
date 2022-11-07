@@ -3,7 +3,7 @@ import Progress from './progress/Progress'
 import Forms from './forms/Forms'
 import ProgressControl from './progressControl/ProgressControl'
 
-import style from './Register.module.css'
+import style from './Register.module.scss'
 
 export default function Register() {
   return (

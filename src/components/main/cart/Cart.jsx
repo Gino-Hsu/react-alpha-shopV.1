@@ -2,7 +2,7 @@ import React from 'react'
 import ProductList from './cartItems/ProductList'
 import PriceList from './cartItems/PriceList'
 
-import styles from './Cart.module.css'
+import styles from './Cart.module.scss'
 
 const PRODUCTS = [
   {

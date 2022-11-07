@@ -1,13 +1,13 @@
 import React from 'react'
 
-import './PriceList.css'
+import styles from './PriceList.module.scss'
 
 export default function PriceList({ text, price }) {
   return (
-    <section className='cart-info'>
-      <div className='cart__text'>{text}</div>
+    <section className={styles.cart__info}>
+      <div className={styles.cart__text}>{text}</div>
       {/* price will render from state */}
-      <div className='cart__price'>${price}</div>
+      <div className={styles.cart__price}>${price}</div>
     </section>
   )
 }

@@ -1,33 +1,33 @@
 import React from 'react'
 
-import './ProductList.css'
+import styles from './ProductList.module.scss'
 
 export default function ProductList({ dataPrice, imgSrc, productName }) {
   return (
     <div
-      className='product-container col col-12'
+      className={styles.product__container}
       data-count='0'
       data-price={dataPrice}
     >
-      <div className='img-container'>
+      <div className={styles.img__container}>
         <img src={imgSrc} alt={productName} />
       </div>
-      <div className='product-info'>
-        <div className='product-name'>{productName}</div>
-        <div className='product-control-container'>
-          <div className='product-control'>
+      <div className={styles.product__info}>
+        <div className={styles.product__name}>{productName}</div>
+        <div className={styles.product__control__container}>
+          <div className={styles.product__control}>
             <Button intext='-' />
             {/* count will render by state */}
-            <p className='count'>0</p>
+            <p className={styles.count}>0</p>
             <Button intext='+' />
           </div>
         </div>
-        <div className='price'>{`$${dataPrice.toLocaleString()}`}</div>
+        <div className={styles.price}>{`$${dataPrice.toLocaleString()}`}</div>
       </div>
     </div>
   )
 }
 
 function Button({ intext }) {
-  return <div className='btn'>{intext}</div>
+  return <div className={styles.btn}>{intext}</div>
 }

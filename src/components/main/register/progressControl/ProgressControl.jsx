@@ -1,7 +1,7 @@
 import React from 'react'
 import ProgressBtn from './ProgressBtn'
 
-import style from './ProgressControl.module.css'
+import style from './ProgressControl.module.scss'
 
 export default function ProgressControl() {
   return (

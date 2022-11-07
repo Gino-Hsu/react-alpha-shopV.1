@@ -3,15 +3,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.progress__bar {
-  display: flex;
-  flex-grow: 1;
-  max-width: 60px;
-  height: 1px;
-  margin: 0px 8px;
-  border: 2px solid #afb1bd;
+  .progress__bar {
+    display: flex;
+    flex-grow: 1;
+    max-width: 60px;
+    height: 1px;
+    margin: 0px 8px;
+    border: 2px solid #afb1bd;
+  }
 }
 
 @media screen and (max-width: 730px) {

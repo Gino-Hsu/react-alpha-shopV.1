@@ -1,11 +1,11 @@
 .register__container {
   grid-column: 1/2;
-}
 
-.register__title {
-  font-weight: 700;
-  font-size: 2rem;
-  color: var(--font-color);
+  .register__title {
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--font-color);
+  }
 }
 
 @media screen and (max-width: 730px) {

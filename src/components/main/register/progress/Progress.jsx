@@ -1,7 +1,7 @@
 import React from 'react'
 import ProgressGroups from './ProgressGroups'
 
-import styles from './Progress.module.css'
+import styles from './Progress.module.scss'
 
 export default function Progress() {
   return (

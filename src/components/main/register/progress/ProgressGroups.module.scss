@@ -1,0 +1,43 @@
+.progress__group {
+  display: flex;
+  align-items: center;
+
+  .progress__icon {
+    margin-right: 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #afb1bd;
+    background-color: var(--circle-bgColor);
+    border: 1px solid #afb1bd;
+    border-radius: 50%;
+  }
+
+  .progress__label {
+    font-size: 1rem;
+    color: #afb1bd;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .progress__group {
+    .progress__icon {
+      margin-right: 0;
+    }
+    .progress__label {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .progress__group {
+    .progress__icon {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}

@@ -25,7 +25,7 @@
   --menu-border-color: rgba(42, 42, 42, 0.1);
 }
 
-:global([data-theme='dark']) {
+:global([dataTheme='dark']) {
   --main-background-color: #121212;
   --font-color: #ffffff;
   --circle-bgColor: #121212;
@@ -50,7 +50,7 @@
   --menu-border-color: rgba(109, 109, 109, 0.4);
 }
 
-:global(body) {
+:global(.App) {
   background-color: var(--main-background-color);
   font-family: 'Noto Sans TC', sans-serif;
   font-size: 16px;

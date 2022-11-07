@@ -5,7 +5,7 @@ import Address from './Address'
 // import Ship from './Ship'
 // import CreditCard from './CreditCard'
 
-import styles from './Forms.module.css'
+import styles from './Forms.module.scss'
 
 export default function Forms() {
   return (

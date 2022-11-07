@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './ProgressGroups.module.css'
+import styles from './ProgressGroups.module.scss'
 
 export default function ProgressGroups({ step, label }) {
   return (

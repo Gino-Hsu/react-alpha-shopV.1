@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './Form.module.css'
+import styles from './Form.module.scss'
 
 export default function Form({ type, title, children }) {
   return (

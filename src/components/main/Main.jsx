@@ -2,7 +2,7 @@ import React from 'react'
 import Register from './register/Register'
 import Cart from './cart/Cart'
 
-import style from './Main.module.css'
+import style from './Main.module.scss'
 
 export default function Main() {
   return (

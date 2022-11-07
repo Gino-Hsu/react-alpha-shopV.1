@@ -10,12 +10,13 @@
 }
 
 :global(select),
-input:not([type="radio"]) {
+input:not([type='radio']) {
   width: 100%;
   height: 40px;
   -webkit-appearance: none;
   border: 1px solid var(--form-items-color);
   border-radius: 4px;
+  color: var(--form-items-color);
   background-color: transparent;
   padding-left: 18px;
   width: 100%;
@@ -32,7 +33,7 @@ input:not([type="radio"]) {
 }
 
 :global(.select__container:after) {
-  content: "";
+  content: '';
   border-style: solid;
   border-width: 5px 4.5px 0 4.5px;
   border-color: var(--form-items-color) transparent transparent transparent;
@@ -43,20 +44,22 @@ input:not([type="radio"]) {
   z-index: -1;
 }
 
-:global(input[type="radio"]) {
+:global(input[type='radio']) {
   -webkit-appearance: none;
   margin: 0 20px;
   width: 20px;
   height: 20px;
   border-radius: 50%;
   background-color: #ffffff;
-  box-shadow: inset 0 0 0 var(--form-radioInput-uncheck-width) var(--form-radioInput-border-color);
+  box-shadow: inset 0 0 0 var(--form-radioInput-uncheck-width)
+    var(--form-radioInput-border-color);
 }
 
-:global(input[type="radio"]:checked) {
-  box-shadow: inset 0 0 0 var(--form--radioInput-checked-width) var(--form-radioInput-border-color);
+:global(input[type='radio']:checked) {
+  box-shadow: inset 0 0 0 var(--form--radioInput-checked-width)
+    var(--form-radioInput-border-color);
 }
 
-:global(input[type="radio"]:checked ~ .radio__box__border) {
+:global(input[type='radio']:checked ~ .radio__box__border) {
   border-color: var(--form-radio-title-color);
 }

@@ -4,20 +4,19 @@
   padding: 2rem 1.5rem;
   border: 1px solid var(--cart-border-color);
   border-radius: 8px;
-}
-
-.cart__title {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--font-color);
+  .cart__title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--font-color);
+  }
 }
 
 @media screen and (max-width: 560px) {
-  .cart__title {
-    display: none;
-  }
   .cart__container {
     padding: 0 1rem;
+    .cart__title {
+      display: none;
+    }
   }
 }
 
