@@ -6,9 +6,22 @@
 
 .nav__icon {
   width: 24px;
+  :global(.icon__search) {
+    content: var(--search-img);
+    display: block;
+  }
+  :global(.icon__shop) {
+    content: var(--shop-img);
+    display: block;
+  }
+  :global(.icon__theme) {
+    content: var(--theme-img);
+    display: block;
+  }
 }
 
 .icon__logo {
+  content: var(--logo-img);
   width: 170px;
 }
 

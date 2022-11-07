@@ -5,10 +5,11 @@
   display: none;
   width: 20px;
   cursor: pointer;
-}
-
-.hamburger__img {
-  width: 100%;
+  .hamburger__img {
+    content: var(--hamburger-image);
+    width: 100%;
+    display: block;
+  }
 }
 
 .menu__checkbox {
@@ -22,14 +23,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
 
-.nav__links,
-.nav__icons {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+  .nav__links,
+  .nav__icons {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
 }
 
 .nav__logo {
@@ -43,10 +44,13 @@
   .hamburger {
     display: block;
   }
+
   .navbar__menu {
+    padding: 0 5%;
     height: auto;
-    width: 90%;
+    width: 100%;
     position: absolute;
+    left: 0;
     top: 100%;
     flex-direction: column;
     background-color: var(--main-background-color);
@@ -54,23 +58,26 @@
     transform: scaleY(0);
     transform-origin: top;
     transition: 0.3s 0s all ease-in;
+
+    .nav__links {
+      width: 100%;
+      flex-direction: column;
+      gap: 0;
+      li {
+        padding: 1.5rem 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid var(--menu-border-color);
+      }
+    }
+
+    .nav__icons {
+      width: 100%;
+      margin: 1.25rem 0;
+      justify-content: center;
+    }
   }
-  .nav__links {
-    width: 100%;
-    flex-direction: column;
-    gap: 0;
-  }
-  .nav__links li {
-    padding: 1.5rem 0;
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid var(--menu-border-color);
-  }
-  .nav__icons {
-    width: 100%;
-    margin: 1.25rem 0;
-    justify-content: center;
-  }
+
   .menu__checkbox:checked ~ .navbar__menu {
     transform: scaleY(1);
   }

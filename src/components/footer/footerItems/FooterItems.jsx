@@ -5,7 +5,7 @@ import styles from '../Footer.module.scss'
 export function Logo({ imgSrc }) {
   return (
     <div className={styles.footer__logo__container}>
-      <img src={imgSrc} alt='Logo' />
+      <img alt='Logo' />
     </div>
   )
 }
