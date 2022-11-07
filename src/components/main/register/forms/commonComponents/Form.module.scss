@@ -1,7 +1,7 @@
+@use '../../../../../mixin';
+
 .form__title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--font-color);
+  @include mixin.font-setting(1.5rem, 700, var(--font-color));
 }
 
 .form__body {

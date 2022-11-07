@@ -29,7 +29,7 @@
   --hamburger-image: url('./images/hamburger@2x.png');
 }
 
-:global([dataTheme='dark']) {
+:global([datatheme='dark']) {
   --main-background-color: #121212;
   --font-color: #ffffff;
   --circle-bgColor: #121212;

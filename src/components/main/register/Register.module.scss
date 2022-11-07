@@ -1,10 +1,10 @@
+@use '../../../mixin';
+
 .register__container {
   grid-column: 1/2;
 
   .register__title {
-    font-weight: 700;
-    font-size: 2rem;
-    color: var(--font-color);
+    @include mixin.font-setting(2rem, 700, var(--font-color));
   }
 }
 

@@ -18,7 +18,7 @@ function App() {
   }
 
   return (
-    <div className='App' dataTheme={theme}>
+    <div className='App' datatheme={theme}>
       <Header changeTheme={changeThemeHandler} />
       <Main />
       <Footer />

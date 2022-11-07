@@ -1,7 +1,9 @@
+@use '../../../../mixin';
+
 .progress__control__container {
   margin-top: 3rem;
   border-top: 1px solid var(--divider-color);
-  cursor: pointer;
+
   .progress__control__button__group {
     padding-top: 1.5rem;
     width: 100%;
@@ -12,9 +14,8 @@
 }
 
 :global(.btn__back) {
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--font-color);
+  @include mixin.font-setting(14px, 400, var(--font-color));
+  cursor: pointer;
 }
 
 :global(.btn__back[disabled]) {
@@ -22,12 +23,11 @@
 }
 
 :global(.btn__prinary) {
-  font-size: 14px;
-  font-weight: 400;
-  color: #ffffff;
+  @include mixin.font-setting(14px, 400, #ffffff);
   background-color: #f67599;
   border-radius: 8px;
   padding: 14.5px 47.5px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 730px) {

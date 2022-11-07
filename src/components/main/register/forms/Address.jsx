@@ -20,7 +20,7 @@ export default function Address() {
         <InputBox id='appellation' label='稱謂'>
           <div className='select__container'>
             <select
-              key='appellation'
+              className='cursor-point'
               value={selectValue.appellation}
               onChange={apellationSelectedHandler}
               required
@@ -49,6 +49,7 @@ export default function Address() {
         <InputBox id='city' label='縣市'>
           <div className='select__container'>
             <select
+              className='cursor-point'
               value={selectValue.city}
               onChange={citySelectedHandler}
               required

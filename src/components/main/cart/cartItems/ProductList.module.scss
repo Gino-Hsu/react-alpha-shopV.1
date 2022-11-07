@@ -1,3 +1,5 @@
+@use '../../../../mixin';
+
 .product__container {
   margin: 2rem 0;
   display: flex;
@@ -20,15 +22,11 @@
     flex-grow: 1;
 
     .product__name {
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--font-color);
+      @include mixin.font-setting(1rem, 400, var(--font-color));
     }
 
     .price {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--font-color);
+      @include mixin.font-setting(1rem, 700, var(--font-color));
     }
 
     .product__control__container {
@@ -43,9 +41,7 @@
           height: 27px;
           background-color: var(--cart-btn-bgColor);
           border-radius: 50%;
-          font-size: 1rem;
-          font-weight: 700;
-          color: var(--cart-btn-fontColor);
+          @include mixin.font-setting(1rem, 700, var(--cart-btn-fontColor));
           display: flex;
           justify-content: center;
           align-items: center;

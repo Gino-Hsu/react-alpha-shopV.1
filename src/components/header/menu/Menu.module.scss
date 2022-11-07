@@ -1,14 +1,14 @@
+@use '../../../mixin';
+
 .hamburger {
+  width: 20px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   display: none;
-  width: 20px;
   cursor: pointer;
   .hamburger__img {
-    content: var(--hamburger-image);
-    width: 100%;
-    display: block;
+    @include mixin.img-setting(var(--hamburger-image), 100%);
   }
 }
 

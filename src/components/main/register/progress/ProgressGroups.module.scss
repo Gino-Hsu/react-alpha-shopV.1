@@ -1,3 +1,5 @@
+@use '../../../../mixin';
+
 .progress__group {
   display: flex;
   align-items: center;
@@ -9,16 +11,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.75rem;
-    color: #afb1bd;
+    @include mixin.font-setting(0.75rem, 700, #afb1bd);
     background-color: var(--circle-bgColor);
     border: 1px solid #afb1bd;
     border-radius: 50%;
   }
 
   .progress__label {
-    font-size: 1rem;
-    color: #afb1bd;
+    @include mixin.font-setting(1rem, 400, #afb1bd);
   }
 }
 

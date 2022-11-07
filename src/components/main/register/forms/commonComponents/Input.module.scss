@@ -1,10 +1,10 @@
+@use '../../../../../mixin';
+
 .input__group {
   width: 100%;
   .input__label {
     margin-bottom: 0.5rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--form-font-color);
+    @include mixin.font-setting(0.75rem, 700, var(--form-font-color));
   }
 }
 
@@ -44,15 +44,11 @@
       width: 100%;
 
       .text {
-        font-size: 14px;
-        font-weight: 700;
-        color: var(--form-radio-title-color);
+        @include mixin.font-setting(14px, 700, var(--form-radio-title-color));
       }
 
       .price {
-        font-size: 12px;
-        font-weight: 400;
-        color: var(--font-color);
+        @include mixin.font-setting(12px, 400, var(--font-color));
         pointer-events: none;
         position: absolute;
         top: 13px;
@@ -62,9 +58,7 @@
   }
 
   .period {
-    font-size: 12px;
-    font-weight: 400;
-    color: var(--form-radio-font-color);
+    @include mixin.font-setting(12px, 400, var(--form-radio-font-color));
   }
 
   .radio__box__border {
