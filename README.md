@@ -1,6 +1,8 @@
 # Alpha Shop - React
 
-![圖片](https://user-images.githubusercontent.com/93201810/199679468-b8bfe642-00d6-47ea-88da-859935b2260f.png)
+![image](https://user-images.githubusercontent.com/93201810/200912082-ee086980-8e6c-44e8-94bd-1d58d683c203.png)
+![image](https://user-images.githubusercontent.com/93201810/200912166-bdeebf95-9fe8-4dd0-ba0b-ee6d37cb3af7.png)
+
 
 ## 介紹
 
