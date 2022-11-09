@@ -21,7 +21,7 @@ const PRODUCTS = [
   },
 ]
 
-export default function Cart() {
+export default function Cart({ checkedData }) {
   const [products, setProducts] = useState(PRODUCTS)
 
   function handleQuantitiyAdd(productID) {
@@ -74,7 +74,10 @@ export default function Cart() {
         })}
       </section>
       {/* price will render from state */}
-      <PriceList text='運費' price='0' />
+      <PriceList
+        text='運費'
+        price={checkedData === 0 ? '免費' : `$${checkedData}`}
+      />
       <PriceList text='小計' price='0' />
     </section>
   )

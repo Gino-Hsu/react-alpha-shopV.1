@@ -7,7 +7,6 @@ export default function ProgressControl({
   handleClickNext,
   handleClickPre,
 }) {
-  console.log(step)
   return (
     <section className={style.progress__control__container}>
       <section

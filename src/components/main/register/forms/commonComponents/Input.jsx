@@ -18,7 +18,7 @@ export function InputRadio({
   priceIntext,
   period,
   checked,
-  onClick,
+  handleOnChange,
 }) {
   return (
     <label className={styles.radio__group} data-price={price}>
@@ -27,7 +27,7 @@ export function InputRadio({
         type='radio'
         name='shipping'
         checked={checked}
-        onClick={() => onClick(radioId)}
+        onChange={() => handleOnChange(radioId)}
       />
       <div className={styles.radio__info}>
         <div className={styles.radio__info__container}>

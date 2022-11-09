@@ -14,7 +14,7 @@ export default function Ship({ currentChecked, handleRadioChecked }) {
           priceIntext='免費'
           period='約 3~7 個工作天'
           checked={currentChecked === 1 && true}
-          onClick={handleRadioChecked}
+          handleOnChange={handleRadioChecked}
         />
       </div>
       <div className='input__container'>
@@ -25,7 +25,7 @@ export default function Ship({ currentChecked, handleRadioChecked }) {
           priceIntext='$500'
           period='48 小時內送達'
           checked={currentChecked === 2 && true}
-          onClick={handleRadioChecked}
+          handleOnChange={handleRadioChecked}
         />
       </div>
     </Form>
