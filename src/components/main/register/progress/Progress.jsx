@@ -32,7 +32,9 @@ export default function Progress({ step }) {
           step >= 2 ? styles.progress__bar__active : styles.progress__bar
         }
       ></span>
-      <ProgressGroups label='付款資訊'>3</ProgressGroups>
+      <ProgressGroups label='付款資訊' activeStyle={step >= 3 && true}>
+        3
+      </ProgressGroups>
     </section>
   )
 }

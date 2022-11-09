@@ -5,7 +5,7 @@ import ProgressControl from './progressControl/ProgressControl'
 
 import style from './Register.module.scss'
 
-export default function Register() {
+export default function Register({ handleRadioChecked, currentChecked }) {
   const [currentStep, setCurrentStep] = useState(1)
 
   function handleNextStep() {
@@ -25,7 +25,11 @@ export default function Register() {
       {/* register title */}
       <h2 className={style.register__title}>結帳</h2>
       <Progress step={currentStep} />
-      <Forms step={currentStep} />
+      <Forms
+        step={currentStep}
+        handleRadioChecked={handleRadioChecked}
+        currentChecked={currentChecked}
+      />
       <ProgressControl
         step={currentStep}
         handleClickNext={handleNextStep}

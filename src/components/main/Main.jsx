@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Register from './register/Register'
 import Cart from './cart/Cart'
 
@@ -20,10 +20,23 @@ import style from './Main.module.scss'
 // ]
 
 export default function Main() {
+  const [currentChecked, setCurrentChecked] = useState(1)
+
+  function handlecurrentChecked(id) {
+    if (id === '2') {
+      setCurrentChecked(2)
+    } else {
+      setCurrentChecked(1)
+    }
+  }
+
   return (
     <main className={style.site__main}>
       <div className={`${style.main__container} container`}>
-        <Register />
+        <Register
+          handleRadioChecked={handlecurrentChecked}
+          currentChecked={currentChecked}
+        />
         <Cart />
       </div>
     </main>

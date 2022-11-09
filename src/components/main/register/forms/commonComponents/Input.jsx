@@ -11,14 +11,23 @@ export function InputBox({ id, label, children }) {
   )
 }
 
-export function InputRadio({ radioId, price, name, priceIntext, period }) {
+export function InputRadio({
+  radioId,
+  price,
+  name,
+  priceIntext,
+  period,
+  checked,
+  onClick,
+}) {
   return (
     <label className={styles.radio__group} data-price={price}>
       <input
         id={`shipping__standard${radioId}`}
         type='radio'
         name='shipping'
-        checked
+        checked={checked}
+        onClick={() => onClick(radioId)}
       />
       <div className={styles.radio__info}>
         <div className={styles.radio__info__container}>

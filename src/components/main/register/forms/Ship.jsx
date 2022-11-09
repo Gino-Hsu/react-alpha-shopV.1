@@ -3,7 +3,7 @@ import React from 'react'
 import Form from './commonComponents/Form'
 import { InputRadio } from './commonComponents/Input'
 
-export default function Ship() {
+export default function Ship({ currentChecked, handleRadioChecked }) {
   return (
     <Form type='shipping' title='願送方式'>
       <div className='input__container'>
@@ -13,6 +13,8 @@ export default function Ship() {
           name='標準運送'
           priceIntext='免費'
           period='約 3~7 個工作天'
+          checked={currentChecked === 1 && true}
+          onClick={handleRadioChecked}
         />
       </div>
       <div className='input__container'>
@@ -22,6 +24,8 @@ export default function Ship() {
           name='DHL 貨運'
           priceIntext='$500'
           period='48 小時內送達'
+          checked={currentChecked === 2 && true}
+          onClick={handleRadioChecked}
         />
       </div>
     </Form>
