@@ -78,7 +78,16 @@ export default function Cart({ checkedData }) {
         text='運費'
         price={checkedData === 0 ? '免費' : `$${checkedData}`}
       />
-      <PriceList text='小計' price='0' />
+      {/* <PriceList text='小計' price='0' /> */}
+      <CalculatePrice products={products} shippingPrice={checkedData} />
     </section>
   )
+}
+
+function CalculatePrice({ products, shippingPrice }) {
+  let totalPrice = null
+  products.map(p => (totalPrice = totalPrice + p.price * p.quantity))
+  totalPrice += shippingPrice
+
+  return <PriceList text='小計' price={`$${totalPrice.toLocaleString()}`} />
 }
