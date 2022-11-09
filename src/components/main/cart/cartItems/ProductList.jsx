@@ -2,13 +2,17 @@ import React from 'react'
 
 import styles from './ProductList.module.scss'
 
-export default function ProductList({ dataPrice, imgSrc, productName }) {
+export default function ProductList({
+  imgSrc,
+  productId,
+  productName,
+  productPrice,
+  productQuantity,
+  handleClickAdd,
+  handleClickMinus,
+}) {
   return (
-    <div
-      className={styles.product__container}
-      data-count='0'
-      data-price={dataPrice}
-    >
+    <div className={styles.product__container}>
       <div className={styles.img__container}>
         <img src={imgSrc} alt={productName} />
       </div>
@@ -16,18 +20,37 @@ export default function ProductList({ dataPrice, imgSrc, productName }) {
         <div className={styles.product__name}>{productName}</div>
         <div className={styles.product__control__container}>
           <div className={styles.product__control}>
-            <Button intext='-' />
+            <Button
+              intext='-'
+              productId={productId}
+              handleClickMinus={handleClickMinus}
+            />
             {/* count will render by state */}
-            <p className={styles.count}>0</p>
-            <Button intext='+' />
+            <p className={styles.count}>{productQuantity}</p>
+            <Button
+              intext='+'
+              productId={productId}
+              handleClickAdd={handleClickAdd}
+            />
           </div>
         </div>
-        <div className={styles.price}>{`$${dataPrice.toLocaleString()}`}</div>
+        <div
+          className={styles.price}
+        >{`$${productPrice.toLocaleString()}`}</div>
       </div>
     </div>
   )
 }
 
-function Button({ intext }) {
-  return <div className={styles.btn}>{intext}</div>
+function Button({ intext, productId, handleClickMinus, handleClickAdd }) {
+  return (
+    <div
+      className={styles.btn}
+      onClick={() =>
+        intext === '-' ? handleClickMinus(productId) : handleClickAdd(productId)
+      }
+    >
+      {intext}
+    </div>
+  )
 }
