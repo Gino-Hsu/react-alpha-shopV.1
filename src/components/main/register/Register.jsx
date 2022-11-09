@@ -25,7 +25,7 @@ export default function Register() {
       {/* register title */}
       <h2 className={style.register__title}>結帳</h2>
       <Progress />
-      <Forms />
+      <Forms step={currentStep} />
       <ProgressControl
         step={currentStep}
         handleClickNext={handleNextStep}

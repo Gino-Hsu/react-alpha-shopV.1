@@ -98,4 +98,8 @@
   :global(.input__address) {
     grid-column: 1/7;
   }
+  :global(.input__card__name),
+  :global(.input__card__number) {
+    grid-column: 1/7;
+  }
 }

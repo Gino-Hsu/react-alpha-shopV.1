@@ -1,19 +1,24 @@
 import React from 'react'
 import Address from './Address'
-
-// Add when using useState
-// import Ship from './Ship'
-// import CreditCard from './CreditCard'
+import Ship from './Ship'
+import CreditCard from './CreditCard'
 
 import styles from './Forms.module.scss'
 
-export default function Forms() {
+export default function Forms({ step }) {
   return (
     <section className={styles.form__container}>
-      <Address />
-      {/* Ship & CreditCard by state */}
-      {/* <Ship /> */}
-      {/* <CreditCard /> */}
+      <CurrentFormControl step={step} />
     </section>
   )
+}
+
+function CurrentFormControl({ step }) {
+  if (step === 1) {
+    return <Address />
+  } else if (step === 2) {
+    return <Ship />
+  } else if (step === 3) {
+    return <CreditCard />
+  }
 }
