@@ -1,11 +1,12 @@
 # Alpha Shop - React
 
-![圖片](https://user-images.githubusercontent.com/93201810/199679468-b8bfe642-00d6-47ea-88da-859935b2260f.png)
+![image](https://user-images.githubusercontent.com/93201810/200912082-ee086980-8e6c-44e8-94bd-1d58d683c203.png)
+![image](https://user-images.githubusercontent.com/93201810/200912166-bdeebf95-9fe8-4dd0-ba0b-ee6d37cb3af7.png)
+
 
 ## 介紹
 
 以 React 進行開發，並以 CSS Modules 進行 CSS 樣式撰寫。
-此專案為購物車，目前版本僅以 React 將畫面 UI 元素元件化，未來將加入狀態控制等功能。
 
 完成的元件包含：
 - Header
