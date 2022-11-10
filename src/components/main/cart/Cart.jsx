@@ -40,18 +40,17 @@ export default function Cart({ checkedData }) {
   }
 
   function handleQuantitiyMinus(productId) {
-    setProducts(
-      products.map(p => {
-        if (p.id === productId && p.quantity > 0) {
-          return {
-            ...p,
-            quantity: p.quantity - 1,
-          }
-        } else {
-          return p
+    let newProducts = products.map(p => {
+      if (p.id === productId && p.quantity > 0) {
+        return {
+          ...p,
+          quantity: p.quantity - 1,
         }
-      })
-    )
+      } else {
+        return p
+      }
+    })
+    setProducts(newProducts.filter(p => p.quantity > 0))
   }
 
   return (
@@ -89,5 +88,12 @@ function CalculatePrice({ products, shippingPrice }) {
   products.map(p => (totalPrice = totalPrice + p.price * p.quantity))
   totalPrice += shippingPrice
 
-  return <PriceList text='小計' price={`$${totalPrice.toLocaleString()}`} />
+  return (
+    <PriceList
+      text='小計'
+      price={
+        products.length > 0 ? `$${totalPrice.toLocaleString()}` : '購物籃是空的'
+      }
+    />
+  )
 }
