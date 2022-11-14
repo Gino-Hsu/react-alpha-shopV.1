@@ -84,15 +84,20 @@ export default function Cart({ checkedData }) {
 }
 
 function CalculatePrice({ products, shippingPrice }) {
-  let totalPrice = null
-  products.map(p => (totalPrice = totalPrice + p.price * p.quantity))
-  totalPrice += shippingPrice
+  function sumTotalPrice() {
+    let totalPrice = null
+    products.map(p => (totalPrice = totalPrice + p.price * p.quantity))
+    totalPrice += shippingPrice
+    return totalPrice
+  }
 
   return (
     <PriceList
       text='小計'
       price={
-        products.length > 0 ? `$${totalPrice.toLocaleString()}` : '購物籃是空的'
+        products.length > 0
+          ? `$${sumTotalPrice().toLocaleString()}`
+          : '購物籃是空的'
       }
     />
   )
