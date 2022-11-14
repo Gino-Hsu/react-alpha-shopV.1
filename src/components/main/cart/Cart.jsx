@@ -1,57 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import ProductList from './cartItems/ProductList'
 import PriceList from './cartItems/PriceList'
 
+import { ProductsContext, AddContext, MinusContext } from './CartContext'
+
 import styles from './Cart.module.scss'
 
-const PRODUCTS = [
-  {
-    id: '1',
-    name: '貓咪罐罐',
-    img: 'https://picsum.photos/300/300?text=1',
-    price: 100,
-    quantity: 2,
-  },
-  {
-    id: '2',
-    name: '貓咪干干',
-    img: 'https://picsum.photos/300/300?text=2',
-    price: 200,
-    quantity: 1,
-  },
-]
-
 export default function Cart({ checkedData }) {
-  const [products, setProducts] = useState(PRODUCTS)
-
-  function handleQuantitiyAdd(productID) {
-    setProducts(
-      products.map(p => {
-        if (p.id === productID) {
-          return {
-            ...p,
-            quantity: p.quantity + 1,
-          }
-        } else {
-          return p
-        }
-      })
-    )
-  }
-
-  function handleQuantitiyMinus(productId) {
-    let newProducts = products.map(p => {
-      if (p.id === productId && p.quantity > 0) {
-        return {
-          ...p,
-          quantity: p.quantity - 1,
-        }
-      } else {
-        return p
-      }
-    })
-    setProducts(newProducts.filter(p => p.quantity > 0))
-  }
+  const products = useContext(ProductsContext)
+  const handleQuantitiyAdd = useContext(AddContext)
+  const handleQuantitiyMinus = useContext(MinusContext)
 
   return (
     <section className={styles.cart__container}>

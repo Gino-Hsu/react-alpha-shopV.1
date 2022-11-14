@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Register from './register/Register'
 import Cart from './cart/Cart'
 
+import { ProductsProvider } from './cart/CartContext'
+
 import style from './Main.module.scss'
 
 const SHIPPINGDATA = [
@@ -41,7 +43,9 @@ export default function Main() {
           handleRadioChecked={handlecurrentChecked}
           currentChecked={currentChecked}
         />
-        <Cart checkedData={checkedShipping[0].price} />
+        <ProductsProvider>
+          <Cart checkedData={checkedShipping[0].price} />
+        </ProductsProvider>
       </div>
     </main>
   )
