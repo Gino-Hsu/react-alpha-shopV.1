@@ -1,15 +1,14 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import ProductList from './cartItems/ProductList'
 import PriceList from './cartItems/PriceList'
 
-import { ProductsContext, AddContext, MinusContext } from './CartContext'
+import { useProducts, useProductsDispatch } from './CartContext'
 
 import styles from './Cart.module.scss'
 
 export default function Cart({ checkedData }) {
-  const products = useContext(ProductsContext)
-  const handleQuantitiyAdd = useContext(AddContext)
-  const handleQuantitiyMinus = useContext(MinusContext)
+  const products = useProducts()
+  const dispatch = useProductsDispatch()
 
   return (
     <section className={styles.cart__container}>
@@ -24,8 +23,7 @@ export default function Cart({ checkedData }) {
               productName={product.name}
               productPrice={product.price}
               productQuantity={product.quantity}
-              handleClickAdd={handleQuantitiyAdd}
-              handleClickMinus={handleQuantitiyMinus}
+              dispatch={dispatch}
             />
           )
         })}

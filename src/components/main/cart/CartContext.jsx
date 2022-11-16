@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useContext, useReducer } from 'react'
 
 const PRODUCTS = [
   {
@@ -17,49 +17,52 @@ const PRODUCTS = [
   },
 ]
 
-export const ProductsContext = createContext()
-export const AddContext = createContext()
-export const MinusContext = createContext()
+const ProductsContext = createContext()
+const ProductsDispatchContext = createContext()
 
 export function ProductsProvider({ children }) {
-  const [products, setProducts] = useState(PRODUCTS)
-
-  function handleQuantitiyAdd(productID) {
-    setProducts(
-      products.map(p => {
-        if (p.id === productID) {
-          return {
-            ...p,
-            quantity: p.quantity + 1,
-          }
-        } else {
-          return p
-        }
-      })
-    )
-  }
-
-  function handleQuantitiyMinus(productId) {
-    let newProducts = products.map(p => {
-      if (p.id === productId && p.quantity > 0) {
-        return {
-          ...p,
-          quantity: p.quantity - 1,
-        }
-      } else {
-        return p
-      }
-    })
-    setProducts(newProducts.filter(p => p.quantity > 0))
-  }
+  const [tasks, dispatch] = useReducer(tasksReducer, PRODUCTS)
 
   return (
-    <ProductsContext.Provider value={products}>
-      <AddContext.Provider value={handleQuantitiyAdd}>
-        <MinusContext.Provider value={handleQuantitiyMinus}>
-          {children}
-        </MinusContext.Provider>
-      </AddContext.Provider>
+    <ProductsContext.Provider value={tasks}>
+      <ProductsDispatchContext.Provider value={dispatch}>
+        {children}
+      </ProductsDispatchContext.Provider>
     </ProductsContext.Provider>
   )
+}
+
+export function useProducts() {
+  return useContext(ProductsContext)
+}
+
+export function useProductsDispatch() {
+  return useContext(ProductsDispatchContext)
+}
+
+function tasksReducer(tasks, action) {
+  switch (action.type) {
+    case 'add': {
+      return tasks.map(task => {
+        if (task.id === action.id) {
+          return { ...task, quantity: task.quantity + 1 }
+        } else {
+          return task
+        }
+      })
+    }
+    case 'minus': {
+      let newTasks = tasks.map(task => {
+        if (task.id === action.id) {
+          return { ...task, quantity: task.quantity - 1 }
+        } else {
+          return task
+        }
+      })
+      return newTasks.filter(newTask => newTask.quantity !== 0)
+    }
+    default: {
+      console.error('something wrong!')
+    }
+  }
 }
