@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { useConfirmed } from '../../../../context/ShoppingSheetContext'
+
 import style from './ProgressControl.module.scss'
 
 export default function ProgressControl({
@@ -7,6 +9,8 @@ export default function ProgressControl({
   handleClickNext,
   handleClickPre,
 }) {
+  const handleConfirmed = useConfirmed()
+
   return (
     <section className={style.progress__control__container}>
       <section
@@ -24,8 +28,7 @@ export default function ProgressControl({
             step === 1 && 'btn__fallwidth'
           }`}
           intext={step < 3 ? '下一步 →' : '確認下單'}
-          disabled={step === 3 && 'disabled'}
-          handleOnClick={handleClickNext}
+          handleOnClick={step < 3 ? handleClickNext : handleConfirmed}
         />
       </section>
     </section>

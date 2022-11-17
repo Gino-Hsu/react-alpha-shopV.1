@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ProductList from './cartItems/ProductList'
 import PriceList from './cartItems/PriceList'
 
-import { useProducts, useProductsDispatch } from './CartContext'
+import { useProducts } from '../../../context/CartContext'
+import { useSheetDispatch } from '../../../context/ShoppingSheetContext'
 
 import styles from './Cart.module.scss'
 
 export default function Cart({ checkedData }) {
   const products = useProducts()
-  const dispatch = useProductsDispatch()
 
   return (
     <section className={styles.cart__container}>
@@ -23,7 +23,6 @@ export default function Cart({ checkedData }) {
               productName={product.name}
               productPrice={product.price}
               productQuantity={product.quantity}
-              dispatch={dispatch}
             />
           )
         })}
@@ -34,18 +33,28 @@ export default function Cart({ checkedData }) {
         price={checkedData === 0 ? '免費' : `$${checkedData}`}
       />
       {/* <PriceList text='小計' price='0' /> */}
-      <CalculatePrice products={products} shippingPrice={checkedData} />
+      <CalculatePrice shippingPrice={checkedData} />
     </section>
   )
 }
 
-function CalculatePrice({ products, shippingPrice }) {
+function CalculatePrice({ shippingPrice }) {
+  const products = useProducts()
+  const sheetDispatch = useSheetDispatch()
+
+  let totalPrice = null
   function sumTotalPrice() {
-    let totalPrice = null
     products.map(p => (totalPrice = totalPrice + p.price * p.quantity))
     totalPrice += shippingPrice
     return totalPrice
   }
+
+  useEffect(() => {
+    sheetDispatch({
+      type: 'sumTotalPrice',
+      value: totalPrice,
+    })
+  }, [products, sheetDispatch, totalPrice])
 
   return (
     <PriceList

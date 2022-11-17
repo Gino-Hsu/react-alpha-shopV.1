@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { useProductsDispatch } from '../../../../context/CartContext'
+
 import styles from './ProductList.module.scss'
 
 export default function ProductList({
@@ -8,7 +10,6 @@ export default function ProductList({
   productName,
   productPrice,
   productQuantity,
-  dispatch,
 }) {
   return (
     <div className={styles.product__container}>
@@ -19,10 +20,10 @@ export default function ProductList({
         <div className={styles.product__name}>{productName}</div>
         <div className={styles.product__control__container}>
           <div className={styles.product__control}>
-            <Button intext='-' productId={productId} dispatch={dispatch} />
+            <Button intext='-' productId={productId} />
             {/* count will render by state */}
             <p className={styles.count}>{productQuantity}</p>
-            <Button intext='+' productId={productId} dispatch={dispatch} />
+            <Button intext='+' productId={productId} />
           </div>
         </div>
         <div
@@ -33,7 +34,8 @@ export default function ProductList({
   )
 }
 
-function Button({ intext, productId, dispatch }) {
+function Button({ intext, productId }) {
+  const dispatch = useProductsDispatch()
   return (
     <button
       className={styles.btn}

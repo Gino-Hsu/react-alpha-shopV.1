@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import Register from './register/Register'
 import Cart from './cart/Cart'
 
-import { ProductsProvider } from './cart/CartContext'
+import { SheetProvider } from '../../context/ShoppingSheetContext'
+import { ProductsProvider } from '../../context/CartContext'
 
 import style from './Main.module.scss'
 
@@ -39,13 +40,15 @@ export default function Main() {
   return (
     <main className={style.site__main}>
       <div className={`${style.main__container} container`}>
-        <Register
-          handleRadioChecked={handlecurrentChecked}
-          currentChecked={currentChecked}
-        />
-        <ProductsProvider>
-          <Cart checkedData={checkedShipping[0].price} />
-        </ProductsProvider>
+        <SheetProvider>
+          <Register
+            handleRadioChecked={handlecurrentChecked}
+            currentChecked={currentChecked}
+          />
+          <ProductsProvider>
+            <Cart checkedData={checkedShipping[0].price} />
+          </ProductsProvider>
+        </SheetProvider>
       </div>
     </main>
   )
