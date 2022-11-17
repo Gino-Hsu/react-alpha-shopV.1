@@ -1,25 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Header from './components/header/Header'
 import Main from './components/main/Main'
 import Footer from './components/footer/Footer'
+import { useTheme } from './context/ThemeContext'
 
 import './reset.module.scss'
 import './base.module.scss'
 
 function App() {
-  const [theme, setTeme] = useState('light')
-
-  function changeThemeHandler() {
-    if (theme === 'light') {
-      setTeme('dark')
-    } else {
-      setTeme('light')
-    }
-  }
+  const theme = useTheme()
 
   return (
     <div className='App' datatheme={theme}>
-      <Header changeTheme={changeThemeHandler} />
+      <Header />
       <Main />
       <Footer />
     </div>
