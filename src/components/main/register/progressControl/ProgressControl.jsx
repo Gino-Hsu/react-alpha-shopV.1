@@ -1,16 +1,20 @@
 import React from 'react'
-
+import ConfirmedModal from './ConfirmedModal'
 import {
   useStep,
   useHandleClickPrev,
   useHandleClickNext,
 } from '../../../../context/StepsContext'
-import { useConfirmed } from '../../../../context/ShoppingSheetContext'
+import {
+  useConfirmed,
+  useSetConfirmed,
+} from '../../../../context/ShoppingSheetContext'
 
 import style from './ProgressControl.module.scss'
 
 export default function ProgressControl() {
-  const handleConfirmed = useConfirmed()
+  const confirmed = useConfirmed()
+  const handleConfirmed = useSetConfirmed()
   const step = useStep()
   const handleClickPrev = useHandleClickPrev()
   const handleClickNext = useHandleClickNext()
@@ -34,6 +38,7 @@ export default function ProgressControl() {
           intext={step < 3 ? '下一步 →' : '確認下單'}
           handleOnClick={step < 3 ? handleClickNext : handleConfirmed}
         />
+        {!!confirmed && <ConfirmedModal />}
       </section>
     </section>
   )

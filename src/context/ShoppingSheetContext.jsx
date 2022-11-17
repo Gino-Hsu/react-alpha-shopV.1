@@ -17,27 +17,38 @@ const SHOPPING_SHEET = {
 const SheetContext = createContext()
 const SheetDispatchContext = createContext()
 const ConfirmedContext = createContext()
+const SetConfirmedContext = createContext()
+const SetResetConfirmedContext = createContext()
 
 export function SheetProvider({ children }) {
   const [tasks, dispatch] = useReducer(tasksReducer, SHOPPING_SHEET)
   const [confirmed, setConfirmed] = useState(false)
 
   function handleOnConfirmed() {
-    setConfirmed(true)
+    if (!Object.values(tasks).includes('')) {
+      setConfirmed(true)
+    }
+  }
+
+  function handleResetConfirmed() {
+    setConfirmed(false)
   }
 
   useEffect(() => {
     if (confirmed) {
       console.log(tasks)
-      setConfirmed(false)
     }
   }, [confirmed, tasks])
 
   return (
     <SheetContext.Provider value={tasks}>
       <SheetDispatchContext.Provider value={dispatch}>
-        <ConfirmedContext.Provider value={handleOnConfirmed}>
-          {children}
+        <ConfirmedContext.Provider value={confirmed}>
+          <SetConfirmedContext.Provider value={handleOnConfirmed}>
+            <SetResetConfirmedContext.Provider value={handleResetConfirmed}>
+              {children}
+            </SetResetConfirmedContext.Provider>
+          </SetConfirmedContext.Provider>
         </ConfirmedContext.Provider>
       </SheetDispatchContext.Provider>
     </SheetContext.Provider>
@@ -52,6 +63,12 @@ export function useSheetDispatch() {
 }
 export function useConfirmed() {
   return useContext(ConfirmedContext)
+}
+export function useSetConfirmed() {
+  return useContext(SetConfirmedContext)
+}
+export function useResetConfirmed() {
+  return useContext(SetResetConfirmedContext)
 }
 
 function tasksReducer(tasks, action) {
