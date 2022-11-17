@@ -24,9 +24,8 @@ export default function Register({ handleRadioChecked, currentChecked }) {
     <section className={style.register__container}>
       {/* register title */}
       <h2 className={style.register__title}>結帳</h2>
-      <Progress step={currentStep} />
+      <Progress />
       <Forms
-        step={currentStep}
         handleRadioChecked={handleRadioChecked}
         currentChecked={currentChecked}
       />

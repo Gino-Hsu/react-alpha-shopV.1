@@ -1,15 +1,19 @@
 import React from 'react'
 
+import {
+  useStep,
+  useHandleClickPrev,
+  useHandleClickNext,
+} from '../../../../context/StepsContext'
 import { useConfirmed } from '../../../../context/ShoppingSheetContext'
 
 import style from './ProgressControl.module.scss'
 
-export default function ProgressControl({
-  step,
-  handleClickNext,
-  handleClickPre,
-}) {
+export default function ProgressControl() {
   const handleConfirmed = useConfirmed()
+  const step = useStep()
+  const handleClickPrev = useHandleClickPrev()
+  const handleClickNext = useHandleClickNext()
 
   return (
     <section className={style.progress__control__container}>
@@ -21,7 +25,7 @@ export default function ProgressControl({
           type='progress__control__btn btn__back'
           intext='← 上一步'
           disabled={step === 1 && 'disabled'}
-          handleOnClick={handleClickPre}
+          handleOnClick={handleClickPrev}
         />
         <ProgressBtn
           type={`progress__control__btn btn__prinary ${

@@ -4,6 +4,7 @@ import Cart from './cart/Cart'
 
 import { SheetProvider } from '../../context/ShoppingSheetContext'
 import { ProductsProvider } from '../../context/CartContext'
+import { StepProvider } from '../../context/StepsContext'
 
 import style from './Main.module.scss'
 
@@ -41,10 +42,12 @@ export default function Main() {
     <main className={style.site__main}>
       <div className={`${style.main__container} container`}>
         <SheetProvider>
-          <Register
-            handleRadioChecked={handlecurrentChecked}
-            currentChecked={currentChecked}
-          />
+          <StepProvider>
+            <Register
+              handleRadioChecked={handlecurrentChecked}
+              currentChecked={currentChecked}
+            />
+          </StepProvider>
           <ProductsProvider>
             <Cart checkedData={checkedShipping[0].price} />
           </ProductsProvider>
