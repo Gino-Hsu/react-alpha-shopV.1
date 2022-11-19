@@ -1,5 +1,4 @@
 import React from 'react'
-import { useSetTheme } from '../../../context/ThemeContext'
 
 import styles from './NavItems.module.scss'
 
@@ -13,10 +12,9 @@ export function NavLinks({ inText, herfLink }) {
   )
 }
 
-export function NavIcons({ imgType, imgAlt }) {
-  const setTheme = useSetTheme()
+export function NavIcons({ imgType, imgAlt, handleOnClick }) {
   return (
-    <li className={styles.nav__item} onClick={setTheme}>
+    <li className={styles.nav__item} onClick={handleOnClick}>
       <div className={`${styles.nav__icon} cursor-point`}>
         <img className={imgType} alt={imgAlt}></img>
       </div>

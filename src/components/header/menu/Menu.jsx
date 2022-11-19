@@ -1,10 +1,12 @@
 import React from 'react'
 import { NavLinks, NavIcons, Logo } from './NavItems'
+import { useSetTheme } from '../../../context/ThemeContext'
 
 // import css
 import styles from './Menu.module.scss'
 
 export default function Menu() {
+  const setTheme = useSetTheme()
   return (
     <>
       <label className={styles.hamburger} htmlFor='menu__checkbox'>
@@ -27,7 +29,11 @@ export default function Menu() {
         <ul className={styles.nav__icons}>
           <NavIcons imgType='icon__search' imgAlt='Search' />
           <NavIcons imgType='icon__shop' imgAlt='Shop' />
-          <NavIcons imgType='icon__theme' imgAlt='Theme' />
+          <NavIcons
+            imgType='icon__theme'
+            imgAlt='Theme'
+            handleOnClick={setTheme}
+          />
         </ul>
       </nav>
       <div className={styles.nav__logo}>
